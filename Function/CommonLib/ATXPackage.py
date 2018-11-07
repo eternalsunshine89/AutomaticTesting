@@ -1,10 +1,9 @@
-import subprocess
 import sys
 
 import requests
 import uiautomator2 as u2
 
-from AutoTest.FunctionTest.comFunction.adb import ADB
+from Function.CommonLib.adbCommand import ADB
 
 
 # uiautomator2操作类

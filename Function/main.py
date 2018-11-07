@@ -4,9 +4,9 @@ import threading
 
 from Function.CommonLib.installApp import AppManage
 from Function.CommonLib.computerInfo import ComputerInfo
-from Function.CommonLib.uiautomator2Lib import U2
+from Function.CommonLib.ATXPackage import U2
 from Function.TestData.filePath import Path, pkg_name
-from Function.CommonLib.appiumLib import Appium
+from Function.CommonLib.AppiumPackage import Appium
 from Function.CommonLib.email import SendEmail
 from Function.CommonLib.fileOperation import Compression
 from Function.CommonLib.HTMLTestRunner import HTMLTestRunner

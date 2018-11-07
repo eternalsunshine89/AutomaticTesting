@@ -2,7 +2,7 @@
 import time
 import unittest
 
-from Function.CommonLib.appiumLib import Appium
+from Function.CommonLib.AppiumPackage import Appium
 from Function.CommonLib.computerInfo import ComputerInfo
 from Function.TestData.elements import Elements
 from Function.CommonLib.log import Log

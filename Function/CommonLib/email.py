@@ -1,6 +1,7 @@
 # coding: utf-8
 import os
 import smtplib
+import sys
 import time
 from email.header import Header
 from email.mime.image import MIMEImage
@@ -30,11 +31,15 @@ class SendEmail(object):
 
     def screen_shot(self):
         # 使用selenium的webdriver协议通过chrome驱动打开网页进行截图
-        driver = webdriver.Chrome()
+        try:
+            driver = webdriver.Chrome()
+        except Exception:
+            print("未找到chromedriver")
+            return sys.exit()
         driver.get(self.get_latest_file(self.html_path))
         time.sleep(1)
-        # driver.fullscreen_window()
-        # time.sleep(1)
+        driver.fullscreen_window()
+        time.sleep(1)
         driver.save_screenshot(self.html_path + '\\%s.png' % time.strftime('%Y%m%d%H%M%S'))
         driver.quit()
 
@@ -46,11 +51,9 @@ class SendEmail(object):
         sender = username
         receiver = ''
         if self.state == 'normal':
-            receiver = 'huanggao@excelliance.cn,fanghetian@excelliance.cn,liminde@excelliance.cn,gezhipeng@excelliance.cn,\
-                   xuhe@excelliance.cn,wangzhe@excean.com,qizhaodi@excean.com,zhuyao@excean.com,lixianzhuang@excelliance.cn,\
-                   wangzhongchang@excelliance.cn'
+            receiver = 'eternalsunshine89@163.com'
         elif self.state == 'debug':
-            receiver = 'wangzhongchang@excelliance.cn'
+            receiver = 'eternalsunshine89@163.com'
         # 通过Header对象编码的文本，包含utf-8编码信息和Base64编码信息。以下中文名测试ok
         subject = '测试报告'
         subject = Header(subject, 'utf-8').encode()
@@ -96,7 +99,7 @@ class SendEmail(object):
 
 
 if __name__ == '__main__':
-    a = SendEmail('wangzhongchang@excelliance.cn', 'wzc6851498',
+    a = SendEmail('eternalsunshine89@163.com', 'wzc6851498',
                   html_path=r'C:\Users\etern\MyProject\AutoTest\FunctionTest\testReport')
     a.screen_shot()
     a.create_email()

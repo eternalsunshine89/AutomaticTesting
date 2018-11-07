@@ -1,11 +1,11 @@
 import time
 import unittest
 
-from AutoTest.FunctionTest.comFunction.appiumLib import Appium
-from AutoTest.FunctionTest.comFunction.computerInfo import ComputerInfo
-from AutoTest.FunctionTest.comFunction.log import Log
-from AutoTest.FunctionTest.testData.elements import Elements
-from AutoTest.FunctionTest.testData.filePath import Path
+from Function.CommonLib.AppiumPackage import Appium
+from Function.CommonLib.computerInfo import ComputerInfo
+from Function.CommonLib.log import Log
+from Function.TestData.elements import Elements
+from Function.TestData.filePath import Path
 
 
 class AddApp(unittest.TestCase, Appium, Log, Elements, ComputerInfo):

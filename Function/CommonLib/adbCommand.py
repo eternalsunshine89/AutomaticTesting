@@ -1,7 +1,7 @@
 # coding=utf-8
 import os
 
-from AutoTest.FunctionTest.testData.filePath import pkg_name
+from Function.TestData.filePath import pkg_name
 
 
 class ADB(object):
