@@ -1,17 +1,16 @@
 # coding=utf-8
 import os
 import threading
-
-from Function.CommonLib.installApp import AppManage
-from Function.CommonLib.computerInfo import ComputerInfo
-from Function.CommonLib.ATXPackage import U2
-from Function.TestData.filePath import Path, pkg_name
-from Function.CommonLib.AppiumPackage import Appium
-from Function.CommonLib.email import SendEmail
-from Function.CommonLib.fileOperation import Compression
-from Function.CommonLib.HTMLTestRunner import HTMLTestRunner
-from Function.CommonLib.log import Analyse
-from Function.testSuit.smoke_test import SmokeTest
+from Function.App01.CommonLib.installApp import AppManage
+from Function.App01.CommonLib.computerInfo import ComputerInfo
+from Function.App01.CommonLib.ATXPackage import U2
+from Function.App01.TestData.filePath import Path, pkg_name
+from Function.App01.CommonLib.AppiumPackage import Appium
+from Function.App01.CommonLib.email import SendEmail
+from Function.App01.CommonLib.fileOperation import Compression
+from Function.App01.CommonLib.HTMLTestRunner import HTMLTestRunner
+from Function.App01.CommonLib.log import Analyse
+from Function.App01.TestSuit.smoke_test import SmokeTest
 
 #                           APP功能测试系统工作流程
 # =============================================================================

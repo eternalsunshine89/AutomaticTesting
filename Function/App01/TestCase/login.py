@@ -2,11 +2,11 @@
 import time
 import unittest
 
-from Function.CommonLib.AppiumPackage import Appium
-from Function.CommonLib.computerInfo import ComputerInfo
-from Function.TestData.elements import Elements
-from Function.CommonLib.log import Log
-from Function.TestData.filePath import Path
+from Function.App01.CommonLib.AppiumPackage import Appium
+from Function.App01.CommonLib.computerInfo import ComputerInfo
+from Function.App01.TestData.elements import Elements
+from Function.App01.CommonLib.log import Log
+from Function.App01.TestData.filePath import Path
 
 
 # 用户登录测试

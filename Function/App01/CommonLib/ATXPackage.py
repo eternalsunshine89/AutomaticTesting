@@ -3,7 +3,7 @@ import sys
 import requests
 import uiautomator2 as u2
 
-from Function.CommonLib.adbCommand import ADB
+from Function.App01.CommonLib.adbCommand import ADB
 
 
 # uiautomator2操作类

@@ -1,69 +1,61 @@
 # coding=utf-8
-import time
+import sys
 
 import pymysql
 
 
-class Mysql(object):
-    def __init__(self, user='root', passwd='admin123', db='test'):
+class MySQL(object):
+    # 初始化时连接数据库
+    def __init__(self, host='localhost', user='root', passwd='admin123', db='test', port=3306):
         try:
             self.conn = pymysql.connect(
-                host='localhost',
-                port=3306,
+                host=host,
+                port=port,
                 user=user,
                 passwd=passwd,
                 db=db,
                 charset='utf8'
             )
         except Exception as e:
-            print(e)
+            print("连接数据库失败：\n %s" % e)
+            sys.exit()
         else:
-            print('数据库连接成功')
+            print('连接数据库成功')
             self.cur = self.conn.cursor()
 
-    def create_table(self, table_name, table_title):
-        sql = 'create table ' + table_name + '%s' % table_title
-        res = self.cur.execute(sql)
-        print(res)
-
+    # 断开数据库连接
     def close(self):
         self.cur.close()
         self.conn.close()
 
-    def add(self, table_name, table_title, add_content):  # 增
-        sql = 'insert into ' + table_name + '%s' % table_title + 'values' + '%s' % add_content
-        res = self.cur.execute(sql)
-        if res:
-            self.conn.commit()
-        else:
-            self.conn.rollback()
-        print(res)
-
-    def remove(self, table_name):  # 删
-        sql = 'drop table ' + table_name
-        res = self.cur.execute(sql)
-        if res:
-            self.conn.commit()
-        else:
-            self.conn.rollback()
-        print(res)
-
-    def mod(self):  # 改
-        sql = 'update testtb set name="Tom Ding" where id=2'
-        res = self.cur.execute(sql)
-        if res:
-            self.conn.commit()
-        else:
-            self.conn.rollback()
-        print(res)
-
-    def show(self):  # 查
-        sql = 'select * from testtb'
-        self.cur.execute(sql)
-        res = self.cur.fetchall()
-        for i in res:
-            print(i)
+    # 操作数据库
+    def sql(self, command):
+        # command参数是需要执行的数据库指令
+        """
+        创建表：create table + 表名
+        向已存在表中插入数据：insert into……values
+        删除已存在的表：drop table + 表名
+        更新表中数据：update……set
+        查询表中数据：select * from
+        """
+        try:
+            res = self.cur.execute(command)
+            print(res)
+            if res:
+                if "select" or "SELECT" in command:
+                    pass
+                else:
+                    self.conn.commit()
+                    print("改动已提交")
+            else:
+                if "select" or "SELECT" in command:
+                    pass
+                else:
+                    self.conn.rollback()
+                    print("改动提交失败，已回滚")
+        except Exception as e:
+            print("数据库指令错误")
 
 
 if __name__ == "__main__":
-    mysql = Mysql()
+    mysql = MySQL()

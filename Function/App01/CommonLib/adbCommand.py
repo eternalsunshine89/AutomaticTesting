@@ -1,7 +1,7 @@
 # coding=utf-8
 import os
 
-from Function.TestData.filePath import pkg_name
+from Function.App01.TestData.filePath import pkg_name
 
 
 class ADB(object):

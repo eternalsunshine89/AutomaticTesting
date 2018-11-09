@@ -1,31 +1,26 @@
 import os
 import sys
-import threading
 import time
 import urllib
 from telnetlib import EC
 from urllib.error import URLError
-
-from appium.webdriver.common.touch_action import TouchAction
-from selenium.webdriver.common.by import By
-
-from AutoTest.FunctionTest.testData.filePath import launch_activity, Path, pkg_name
-from AutoTest.FunctionTest.comFunction.adb import ADB
+from Function.App01.TestData.filePath import launch_activity, pkg_name
+from Function.App01.CommonLib.adbCommand import ADB
 from appium import webdriver
+from appium.webdriver.common.touch_action import TouchAction
 import selenium
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import WebDriverException
-from AutoTest.FunctionTest.comFunction.multiThread import NewThread
 
 
-# appium的封装
+# 封装appium
 class Appium(ADB):
-
     # 初始化appium,获取手机屏幕尺寸
     def appium_init(self):
         global driver, window_size
-        window_size = os.popen('adb shell wm size').read().split()[2]
         desired_cups = {}
+        window_size = os.popen('adb shell wm size').read().split()[2]
         desired_cups['platformName'] = 'Android'
         desired_cups['platformVersion'] = self.get_android_version()
         desired_cups['deviceName'] = self.get_device_id()
@@ -74,9 +69,9 @@ class Appium(ADB):
                     if 'node.exe' in os.popen('tasklist | findstr "node.exe"').read():
                         while True:
                             try:
-                                driver = self.appium_init()
+                                d = self.appium_init()
                                 print('appium初始化完成')
-                                return driver
+                                return d
                             except ConnectionRefusedError:
                                 time.sleep(3)
                             except URLError:
@@ -86,7 +81,7 @@ class Appium(ADB):
         else:
             sys.exit()
 
-    # 结束appium进程（Windows适用）
+    # 结束appium进程（适用Windows）
     def stop_appium_server(self):
         driver.quit()
         pid_node = os.popen('tasklist | findstr "node.exe"').readlines()
@@ -96,21 +91,6 @@ class Appium(ADB):
         for i in pid_cmd:
             os.popen('taskkill /f /pid ' + i.split()[1])
         print('appium服务窗口已关闭')
-
-    # 显式等待元素出现（直到until方法执行完毕，或者等待10秒后等待取消）
-    def wait_for_element(self, control, time=10, frequency=1):
-        if '//' in control:
-            try:
-                WebDriverWait(driver, time, frequency).until(lambda driver: driver.find_element_by_xpath(control))
-            except selenium.common.exceptions.WebDriverException:
-                print('等待元素%s出错' % control)
-        elif ':id/' in control:
-            try:
-                WebDriverWait(driver, time, frequency).until(lambda driver: driver.find_element_by_id(control))
-            except WebDriverException:
-                print('等待元素%s出错' % control)
-        else:
-            print("不支持的控件名")
 
     # 定位名称唯一的控件，返回该控件对象
     def find_element(self, control):
@@ -154,6 +134,16 @@ class Appium(ADB):
         else:
             print("不支持的控件名")
 
+    # 显式等待元素出现（直到until方法执行完毕，或者等待10秒后等待取消）
+    def wait_for_element(self, control, t=10, frequency=1):
+        try:
+            WebDriverWait(driver, t, frequency).until(self.find_element(control))
+        except selenium.common.exceptions.WebDriverException:
+            try:
+                WebDriverWait(driver, t, frequency).until(self.find_element2(control))
+            except selenium.common.exceptions.WebDriverException:
+                print('等待元素%s出错' % control)
+
     # 控件操作："长按"
     def long_press(self, control, t=1000):
         touch = TouchAction(driver)
@@ -187,7 +177,7 @@ class Appium(ADB):
             print('参数输入有误')
 
     # 滑动查找控件
-    def swipe_find_element(self, control, direction='U'):
+    def swipe_to_find_element(self, control, direction='U'):
         count = 0
         while True:
             try:
@@ -202,12 +192,12 @@ class Appium(ADB):
                     time.sleep(1)
 
     # 显式等待元素出现（直到until方法执行完毕，或者等待10秒后等待取消）
-    def wait_element(self, control, wait=10, frequency=1):
-        WebDriverWait(driver, wait, frequency).until(self.find_element(control))
+    def wait_element(self, control, t=10, frequency=1):
+        WebDriverWait(driver, t, frequency).until(self.find_element(control))
 
     # 显式等待activity出现（直到until方法执行完毕，或者等待10秒后等待取消）
-    def wait_activity(self, activity, wait=10, frequency=1):
-        driver.wait_activity(activity, wait, frequency)
+    def wait_activity(self, activity, t=10, frequency=1):
+        driver.wait_activity(activity, t, frequency)
 
     # 查找指定内容的toast并返回布尔类型结果
     def toast(self, message):
@@ -244,7 +234,7 @@ class Appium(ADB):
             except Exception as e:
                 print(e)
         else:
-            print('is stop 1')
+            print('system_alert is stopped')
 
     # app弹窗处理
     def app_alert(self):
@@ -273,22 +263,12 @@ class Appium(ADB):
             except Exception as e:
                 print(e)
         else:
-            print('is stop 2')
+            print('app_alert is stopped')
 
     def stop_thread(self):
         global system_alert_flag, app_alert_flag
-        system_alert_flag =False
+        system_alert_flag = False
         app_alert_flag = False
-
-    """以下为双开助手定制操作的封装"""
-    # 启动app，滑过欢迎页，单击“开始体验”按钮进入添加引导页
-    def skimover_welpage(self):
-        adb = ADB()
-        adb.app_start()
-        time.sleep(2)
-        self.swipe('l')
-        self.swipe('l')
-        self.find_element('//*[@text="开始体验"]').click()
 
 
 if __name__ == '__main__':

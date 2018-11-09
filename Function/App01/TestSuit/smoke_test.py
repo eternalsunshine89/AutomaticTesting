@@ -1,6 +1,6 @@
 import unittest
-from Function.TestCase.login import Login
-from Function.TestCase.addApp import AddApp
+from Function.App01.TestCase.login import Login
+from Function.App01.TestCase.addApp import AddApp
 
 
 # 主功能测试用例装载
