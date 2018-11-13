@@ -1,23 +1,23 @@
 # coding=utf-8
 import sys
 
-import pymysql
+from pymysql import connect
 
 
 class MySQL(object):
     # 初始化时连接数据库
-    def __init__(self, host='localhost', user='root', passwd='admin123', db='test', port=3306):
+    def __init__(self, host='localhost', port=3306, user='root', passwd='root', db='test', charset='utf8'):
         try:
-            self.conn = pymysql.connect(
+            self.conn = connect(
                 host=host,
                 port=port,
                 user=user,
                 passwd=passwd,
                 db=db,
-                charset='utf8'
+                charset=charset
             )
         except Exception as e:
-            print("连接数据库失败：\n %s" % e)
+            print("连接数据库失败：%s" % e)
             sys.exit()
         else:
             print('连接数据库成功')
@@ -55,7 +55,11 @@ class MySQL(object):
                     print("改动提交失败，已回滚")
         except Exception as e:
             print("数据库指令错误")
+        finally:
+            self.close()
+            print('已断开数据库连接')
 
 
 if __name__ == "__main__":
     mysql = MySQL()
+    mysql.sql('CREATE TABLE test01;')
