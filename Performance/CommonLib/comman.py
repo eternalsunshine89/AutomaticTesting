@@ -7,8 +7,7 @@ import time
 import uiautomator2
 import uiautomator2 as u2
 
-from myFuncLib.adb import ADB
-
+from Function.App01.CommonLib.adbCommand import ADB
 
 pkg_name = 'com.excelliance.dualaid'
 activity = 'com.excelliance.kxqp.ui.HelloActivity'
@@ -65,11 +64,11 @@ class U2(object):
 
     # 向输入框内输入内容
     def input_text(self, text):
-        d.set_fastinput_ime(True)     # 切换成FastInputIME输入法
-        d.clear_text()                # 清除输入框内的所有内容(Require android-uiautomator.apk version >= path.0.7)
+        d.set_fastinput_ime(True)  # 切换成FastInputIME输入法
+        d.clear_text()  # 清除输入框内的所有内容(Require android-uiautomator.apk version >= path.0.7)
         d(focused=True).set_text(text)  # 输入内容
         # d.send_keys(text)             # 输入内容
-        d.set_fastinput_ime(False)    # 切换成正常的输入法
+        d.set_fastinput_ime(False)  # 切换成正常的输入法
 
     # 登录本机QQ
     def local_QQ_login(self, user, key):

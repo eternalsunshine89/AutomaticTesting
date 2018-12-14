@@ -2,11 +2,11 @@
 import os
 import time
 
-from AutoTest.performancetest.launch_time import run_start_time
-from AutoTest.performancetest.comman import stop_atx
-from AutoTest.performancetest.cpu_mem import run_cpu_mem
-from AutoTest.performancetest.net_data_flow import run_network
-from AutoTest.performancetest.power import run_power
+from Performance.TestScript.launch_time import run_start_time
+from Performance.CommonLib.comman import stop_atx
+from Performance.TestScript.cpu_mem import run_cpu_mem
+from Performance.TestScript.net_data_flow import run_network
+from Performance.TestScript.power import run_power
 
 
 def run(state):

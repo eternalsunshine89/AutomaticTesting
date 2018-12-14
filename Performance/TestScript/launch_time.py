@@ -9,10 +9,10 @@ import time
 import numpy as np
 import uiautomator2
 
-from AutoTest.myFuncLib.adb import ADB
-from AutoTest.myFuncLib.pltSet import *
-from AutoTest.myFuncLib.email import SendEmail
-from AutoTest.performancetest.comman import pkg_name, activity, atx_init
+from Function.App01.CommonLib.adbCommand import ADB
+from .pltSet import *
+from .email import SendEmail
+from performancetest.comman import pkg_name, activity, atx_init
 
 # 脚本功能文档
 __doc__ = """

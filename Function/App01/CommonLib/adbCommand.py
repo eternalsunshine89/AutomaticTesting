@@ -6,13 +6,24 @@ from Function.App01.TestData.filePath import pkg_name
 
 class ADB(object):
     """调用adb命令获取设备或者app的相关信息"""
-    __adb_command = [
-        'adb devices',
-        'adb shell',
-    ]
+    __adbCommand__ = {
+        'adb devices': "检查USB连接的设备",
+        'adb shell netcfg': "获取安卓手机已连接WiFi的ip地址",
+        "adb shell pm dump 包名 | findstr 'u0a'": "根据app包名获取其uid号",
+        "adb shell monkey -v -v -v 0": "根据app包名获取其启动入口类",
+        "adb shell am start 包名/入口类名": "启动app",
+        "adb shell input keyevent 4": "back",
+        "adb shell input keyevent 3": "home",
+        "adb shell am force-stop 包名": "强行停止app",
+        "adb shell pm clear 包名": "清除app本地数据",
+        "adb uninstall 包名": "卸载app",
+        "adb shell getprop ro.build.version.release": "获取Android版本号",
+        "adb shell pm dump 包名 | findstr 'versionName'": "获取app版本号",
+    }
 
-    def command_list(self):
-        print(self.__adb_command)
+    def commands(self):
+        for j, k in self.__adbCommand__.items():
+            print(k + '——————>' + j)
 
     def get_device_id(self):
         texts = os.popen('adb devices').readlines()
@@ -92,7 +103,7 @@ class ADB(object):
 
     def uninstall_app(self):
         """卸载app"""
-        os.popen('adb uninstall com.excelliance.dualaid')
+        os.popen('adb uninstall ' + pkg_name)
 
     def get_android_version(self):
         """获取设备的Android版本号"""
@@ -110,4 +121,4 @@ class ADB(object):
 
 if __name__ == '__main__':
     a = ADB()
-    a.get_app_version()
+    a.commands()
