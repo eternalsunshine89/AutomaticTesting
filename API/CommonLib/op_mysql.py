@@ -62,4 +62,3 @@ class MySQL(object):
 
 if __name__ == "__main__":
     mysql = MySQL()
-    mysql.sql('CREATE TABLE test01;')

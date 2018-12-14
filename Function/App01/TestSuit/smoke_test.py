@@ -13,3 +13,7 @@ class SmokeTest(object):
         for i in cases:
             suite.addTest(unittest.makeSuite(i))
         return suite
+
+
+if __name__ == "__main__":
+    print(unittest.__all__)

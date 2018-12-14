@@ -2,11 +2,11 @@
 import os
 import time
 
-from AutoTest.FunctionTest.comFunction.computerInfo import ComputerInfo
+from Function.App01.CommonLib.computerInfo import ComputerInfo
 
 
 # 获取安卓手机的运行日志,可同时抓取多个log
-from AutoTest.FunctionTest.testData.filePath import Path
+from Function.App01.TestData.filePath import Path
 
 
 class Log(ComputerInfo):

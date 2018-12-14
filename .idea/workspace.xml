@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11cc8c17-abce-4958-a7c6-cd1cd09b658c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Function/App01/CommonLib/adbCommand.py" beforeDir="false" afterPath="$PROJECT_DIR$/Function/App01/CommonLib/adbCommand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Performance/CommonLib/comman.py" beforeDir="false" afterPath="$PROJECT_DIR$/Performance/CommonLib/comman.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Performance/TestScript/launch_time.py" beforeDir="false" afterPath="$PROJECT_DIR$/Performance/TestScript/launch_time.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Performance/man.py" beforeDir="false" afterPath="$PROJECT_DIR$/Performance/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/TestCase/testcase.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/TestSuite/test_01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/db_init/db_config.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/db_init/mysql_db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/db_init/test_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatabaseOperation/mysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/API/CommonLib/op_mysql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Function/App01/CommonLib/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/Function/App01/CommonLib/log.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Function/App01/TestSuit/smoke_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Function/App01/TestSuit/smoke_test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +21,9 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/AutomaticTesting$adbCommand.coverage" NAME="adbCommand Coverage Results" MODIFIED="1544775669090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Function/App01/CommonLib" />
     <SUITE FILE_PATH="coverage/AutomaticTesting$uiautomator2Lib.coverage" NAME="uiautomator2Lib Coverage Results" MODIFIED="1541503962210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Function/CommonLib" />
+    <SUITE FILE_PATH="coverage/AutomaticTesting$smoke_test.coverage" NAME="smoke_test Coverage Results" MODIFIED="1544776931678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Function/App01/TestSuit" />
     <SUITE FILE_PATH="coverage/AutomaticTesting$email.coverage" NAME="email Coverage Results" MODIFIED="1541505025851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Function/CommonLib" />
-    <SUITE FILE_PATH="coverage/AutomaticTesting$mysql.coverage" NAME="mysql Coverage Results" MODIFIED="1542095311060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DatabaseOperation" />
+    <SUITE FILE_PATH="coverage/AutomaticTesting$mysql.coverage" NAME="mysql Coverage Results" MODIFIED="1544777127249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DatabaseOperation" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="306137485">
@@ -62,7 +67,7 @@
     <session id="-2042984722">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.opened" value="2" />
@@ -70,100 +75,30 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="6" />
+          <entry key="py" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="6" />
+          <entry key="Python" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="4" />
-          <entry key="py" value="441" />
+          <entry key="dummy" value="7" />
+          <entry key="py" value="519" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="441" />
+          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="Python" value="519" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Performance/CommonLib/comman.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="11" lean-forward="true" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-              <folding>
-                <element signature="e#383#1063#0" />
-                <element signature="e#422#979#0" />
-                <element signature="e#547#612#0" />
-                <element signature="e#771#836#0" />
-                <element signature="e#886#979#0" />
-                <element signature="e#934#979#0" />
-                <element signature="e#1022#1063#0" />
-                <element signature="e#1106#1355#0" />
-                <element signature="e#1153#1276#0" />
-                <element signature="e#1313#1355#0" />
-                <element signature="e#1398#4690#0" />
-                <element signature="e#1458#1558#0" />
-                <element signature="e#1616#1915#0" />
-                <element signature="e#1979#2590#0" />
-                <element signature="e#2487#2590#0" />
-                <element signature="e#2641#4690#0" />
-                <element signature="e#2773#3653#0" />
-                <element signature="e#2854#3611#0" />
-                <element signature="e#2900#3417#0" />
-                <element signature="e#3000#3124#0" />
-                <element signature="e#3460#3611#0" />
-                <element signature="e#3731#3883#0" />
-                <element signature="e#4203#4280#0" />
-                <element signature="e#4587#4690#0" />
-                <element signature="e#4736#7929#0" />
-                <element signature="e#4825#7929#0" />
-                <element signature="e#4849#7929#0" />
-                <element signature="e#4887#7929#0" />
-                <element signature="e#4912#7841#0" />
-                <element signature="e#4957#6718#0" />
-                <element signature="e#5577#6022#0" />
-                <element signature="e#6081#6400#0" />
-                <element signature="e#6788#7841#0" />
-                <element signature="e#7333#7642#0" />
-                <element signature="e#7701#7841#0" />
-                <element signature="e#7974#10872#0" />
-                <element signature="e#8007#10872#0" />
-                <element signature="e#8183#8671#0" />
-                <element signature="e#8236#8453#0" />
-                <element signature="e#8488#8671#0" />
-                <element signature="e#8854#8958#0" />
-                <element signature="e#9163#9170#0" />
-                <element signature="e#9378#10872#0" />
-                <element signature="e#9399#10768#0" />
-                <element signature="e#9587#10684#0" />
-                <element signature="e#9665#10003#0" />
-                <element signature="e#9954#10003#0" />
-                <element signature="e#10061#10409#0" />
-                <element signature="e#10360#10409#0" />
-                <element signature="e#10468#10534#0" />
-                <element signature="e#10585#10684#0" />
-                <element signature="e#10727#10768#0" />
-                <element signature="e#10820#10853#0" />
-                <element signature="e#10917#11129#0" />
-                <element signature="e#10959#11011#0" />
-                <element signature="e#11042#11129#0" />
-                <element signature="e#11152#11183#0" />
-                <element signature="e#11217#11293#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -197,11 +132,13 @@
         <option value="$PROJECT_DIR$/Function/App01/CommonLib/BaseOperation.py" />
         <option value="$PROJECT_DIR$/Function/App01/CommonLib/AppiumPackage.py" />
         <option value="$USER_HOME$/Desktop/王中昶个人简历.html" />
-        <option value="$PROJECT_DIR$/DatabaseOperation/mysql.py" />
         <option value="$PROJECT_DIR$/Performance/man.py" />
         <option value="$PROJECT_DIR$/Function/App01/CommonLib/adbCommand.py" />
         <option value="$PROJECT_DIR$/Performance/CommonLib/comman.py" />
         <option value="$PROJECT_DIR$/Performance/TestScript/launch_time.py" />
+        <option value="$PROJECT_DIR$/Function/App01/CommonLib/log.py" />
+        <option value="$PROJECT_DIR$/Function/App01/TestSuit/smoke_test.py" />
+        <option value="$PROJECT_DIR$/DatabaseOperation/mysql.py" />
       </list>
     </option>
   </component>
@@ -211,7 +148,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="85" />
     <option name="y" value="25" />
     <option name="width" value="1750" />
@@ -233,6 +170,11 @@
               <item name="AutomaticTesting" type="b2602c69:ProjectViewProjectNode" />
               <item name="AutomaticTesting" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="AutomaticTesting" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AutomaticTesting" type="462c0819:PsiDirectoryNode" />
+              <item name="DatabaseOperation" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -251,6 +193,7 @@
       <recent name="https://github.com/eternalsunshine89/TestPlatform" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\pythonProject\AutomaticTesting\API\CommonLib" />
       <recent name="E:\AutomaticTesting\Function\App01" />
       <recent name="E:\AutomaticTesting\DatabaseOperation" />
     </key>
@@ -267,7 +210,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.adbCommand">
+  <component name="RunManager" selected="Python.mysql">
     <configuration name="adbCommand" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AutomaticTesting" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -334,6 +277,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="smoke_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AutomaticTesting" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Function/App01/TestSuit" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Function/App01/TestSuit/smoke_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="uiautomator2Lib" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AutomaticTesting" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -361,11 +326,13 @@
       <item itemvalue="Python.email" />
       <item itemvalue="Python.mysql" />
       <item itemvalue="Python.adbCommand" />
+      <item itemvalue="Python.smoke_test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.adbCommand" />
         <item itemvalue="Python.mysql" />
+        <item itemvalue="Python.smoke_test" />
+        <item itemvalue="Python.adbCommand" />
         <item itemvalue="Python.email" />
         <item itemvalue="Python.uiautomator2Lib" />
       </list>
@@ -392,7 +359,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26666668" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30070922" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -420,20 +387,10 @@
     <entry file="https://github.com/eternalsunshine89/TestPlatform">
       <provider selected="true" editor-type-id="httpFileEditor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Function/App01/TestData/elements.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Function/App01/TestCase/addApp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="61">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Function/App01/CommonLib/ATXPackage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -448,13 +405,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="63" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Function/App01/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-863">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -473,23 +423,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Desktop/王中昶个人简历.html" />
-    <entry file="file://$PROJECT_DIR$/DatabaseOperation/mysql.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="54" column="39" lean-forward="true" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
-          <folding>
-            <element signature="e#15#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Function/App01/TestData/filePath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Performance/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
@@ -610,6 +543,115 @@
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Function/App01/CommonLib/ATXPackage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1171">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Function/App01/TestData/elements.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#56#291#0" />
+            <element signature="e#325#454#0" />
+            <element signature="e#489#609#0" />
+            <element signature="e#636#2094#0" />
+            <element signature="e#2125#2375#0" />
+            <element signature="e#2412#2544#0" />
+            <element signature="e#2570#3901#0" />
+            <element signature="e#3934#3998#0" />
+            <element signature="e#4030#4334#0" />
+            <element signature="e#4365#4552#0" />
+            <element signature="e#4582#4803#0" />
+            <element signature="e#4838#5014#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Function/App01/TestData/filePath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+          <folding>
+            <element signature="e#202#720#0" />
+            <element signature="e#754#929#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3.7/Lib/unittest/loader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1078">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#26#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Function/App01/CommonLib/log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-198">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3.7/Lib/unittest/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+          <folding>
+            <element signature="e#2218#2248#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Function/App01/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-71">
+          <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <folding>
+            <element signature="e#622#663#0" />
+            <element signature="e#1814#1950#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Function/App01/TestSuit/smoke_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/CommonLib/op_mysql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="e#15#25#0" expanded="true" />
+            <element signature="e#210#603#0" />
+            <element signature="e#648#690#0" />
+            <element signature="e#740#1546#0" />
+            <element signature="e#771#943#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/db_init/mysql_db.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/db_init/test_data.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/API/main.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
