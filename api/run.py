@@ -11,8 +11,6 @@ def test_suite():
 
 
 def run(suite):
-    if not os.path.exists(report_path):
-        os.popen("mkdir {}".format(report_path))
     logging.info("=" * 30 + "测试开始" + "=" * 30)
     result = BeautifulReport(suite)
     result.report(filename='report_{}.html'.format(now), description='接口测试', report_dir=report_path,
