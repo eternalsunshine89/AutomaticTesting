@@ -1,8 +1,8 @@
 import pymysql
-from config.config import *
+from config import *
 
 
-class DB:
+class DB(object):
     def __init__(self):
         try:
             self.conn = pymysql.connect(host=db_host,
@@ -31,7 +31,7 @@ class DB:
             self.conn.commit()
         except Exception as e:
             self.conn.rollback()
-            print(str(e))
+            print(e)
 
 
 if __name__ == '__main__':

@@ -1,5 +1,5 @@
 import os
-from config.config import prj_path
+from config import prj_path
 
 
 def get_lastest_file():

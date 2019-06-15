@@ -2,7 +2,7 @@ import smtplib  # 用于建立smtp连接
 from email.mime.text import MIMEText  # 邮件需要专门的MIME格式
 from email.mime.multipart import MIMEMultipart  # 混合MIME格式，支持上传附件
 from email.header import Header  # 支持中文邮件主题
-from config.config import *
+from config import *
 
 
 def send_email(report, count_num, pass_num, fail_num, error_num, rate):
