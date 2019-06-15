@@ -22,7 +22,7 @@ if not os.path.exists("./api/log"):
     os.popen("cd api&&mkdir {}".format("log"))
 elif not os.path.exists("./api/report"):
     os.popen("cd api&&mkdir {}".format("report"))
-    time.sleep(3)
+    time.sleep(2)
 log_file = os.path.join(prj_path, 'log', 'log_{}.txt'.format(today))  # log文件
 report_path = os.path.join(prj_path, 'report')  # 测试报告存放路径
 test_data_file = os.path.join(prj_path, 'test/cases', 'test_data.xlsx')  # 测试数据存放路径
