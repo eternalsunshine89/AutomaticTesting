@@ -18,8 +18,8 @@ now = time.strftime('%Y%m%d_%H%M%S', time.localtime())
 # 文件路径
 prj_path = os.path.dirname(os.path.abspath(__file__))  # 项目路径(根目录)
 test_case_path = os.path.join(prj_path, 'cases\case')  # 用例路径
-if not os.path.exists("log"):
-    os.popen("mkdir {}".format("log"))
+if not os.path.exists("./api/log"):
+    os.popen("cd api&&mkdir {}".format("log"))
     time.sleep(5)
 log_file = os.path.join(prj_path, 'log', 'log_{}.txt'.format(today))  # log文件
 report_path = os.path.join(prj_path, 'report')  # 测试报告存放路径
