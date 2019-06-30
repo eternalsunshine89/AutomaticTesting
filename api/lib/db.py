@@ -33,6 +33,9 @@ class DB(object):
             self.conn.rollback()
             print(e)
 
+    def insert(self, table, params):
+        pass
+
 
 if __name__ == '__main__':
     d = DB()

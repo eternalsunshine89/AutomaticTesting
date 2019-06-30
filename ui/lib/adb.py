@@ -1,8 +1,6 @@
 # coding=utf-8
 import os
 
-from Function.App01.TestData.filePath import pkg_name
-
 
 class ADB(object):
     """调用adb命令获取设备或者app的相关信息"""
@@ -21,9 +19,9 @@ class ADB(object):
         "adb shell pm dump 包名 | findstr 'versionName'": "获取app版本号",
     }
 
-    def commands(self):
+    def show_commands(self):
         for j, k in self.__adbCommand__.items():
-            print(k + '——————>' + j)
+            print(k + '(' + j + ')')
 
     def get_device_id(self):
         texts = os.popen('adb devices').readlines()
@@ -56,24 +54,24 @@ class ADB(object):
             return False
 
     # 获取安卓手机的ip地址
-    def get_phone_ip(self):
+    def get_device_ip(self):
         data = os.popen('adb shell netcfg').readlines()
         for i in data:
             if 'wlan0' in i:
                 ip = i.split()[2].split('/')[0]
                 print(ip)
-                return ip
+        return ip
 
-    def get_app_uid(self, pkg=pkg_name):
+    def get_app_uid(self, pkg=''):
         """根据app包名获取其uid号"""
         content = os.popen('adb shell pm dump ' + pkg + ' | findstr "u0a"').read()
         uid = content.split()[-1].replace(':', '')
-        print('%s的uid为：%s' % (pkg_name, uid))
+        print('%s的uid为：%s' % (pkg, uid))
         return uid
 
-    def get_app_launch_activity(self, pkg=pkg_name):
+    def get_launch_activity(self, pkg=''):
         """根据app包名获取其启动入口类"""
-        if pkg_name not in os.popen('adb shell pm list package').read():
+        if pkg not in os.popen('adb shell pm list package').read():
             print('本机未安装该应用')
         else:
             activity = (x.split()[5] for x in os.popen('adb shell monkey -v -v -v 0').readlines() if pkg in x)
@@ -93,25 +91,25 @@ class ADB(object):
         """home按键"""
         os.popen('adb shell input keyevent 3')
 
-    def app_force_stop(self):
+    def force_stop(self):
         """强行停止app"""
         os.popen('adb shell am force-stop ' + pkg_name)
 
-    def app_data_clear(self):
+    def data_clear(self):
         """清除app数据"""
         os.popen('adb shell pm clear ' + pkg_name)
 
-    def uninstall_app(self):
+    def uninstall(self, pkg):
         """卸载app"""
-        os.popen('adb uninstall ' + pkg_name)
+        os.popen('adb uninstall ' + pkg)
 
-    def get_android_version(self):
+    def android_vs(self):
         """获取设备的Android版本号"""
         version = os.popen('adb shell getprop ro.build.version.release').read().strip()
         print('安卓版本：%s' % version)
         return version
 
-    def get_app_version(self):
+    def app_vs(self):
         # 获取app的版本号
         version = os.popen(
             'adb shell pm dump ' + pkg_name + ' | findstr "versionName"').read().replace('versionName=', '').strip()

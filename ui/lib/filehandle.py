@@ -2,13 +2,11 @@
 import os
 import time
 from zipfile import ZipFile, ZIP_DEFLATED
-
 from PIL import Image, ImageChops
 
 
 class Picture(object):
     """截图以及图片处理"""
-
     def compare_images(self, path_one, path_two, path_diff):
         """对比两张截图并返回两张截图中不同的区域以便观察"""
         image_one = Image.open(path_one)

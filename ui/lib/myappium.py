@@ -14,7 +14,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import WebDriverException
 
 
-# 封装appium
+# 对appium的api进行的二次封装
 class Appium(ADB):
     # 初始化appium,获取手机屏幕尺寸
     def appium_init(self):
@@ -37,7 +37,7 @@ class Appium(ADB):
         driver.quit()
 
     # 获取手机系统当前时间
-    def get_phone_time(self):
+    def device_time(self):
         return driver.device_time
 
     # 获取当前页面内容，以xml格式返回
@@ -90,7 +90,7 @@ class Appium(ADB):
         pid_cmd = os.popen('tasklist | findstr "cmd.exe"').readlines()
         for i in pid_cmd:
             os.popen('taskkill /f /pid ' + i.split()[1])
-        print('appium服务窗口已关闭')
+        print('appium服务已关闭')
 
     # 定位名称唯一的控件，返回该控件对象
     def find_element(self, control):
@@ -265,7 +265,7 @@ class Appium(ADB):
         else:
             print('app_alert is stopped')
 
-    def stop_thread(self):
+    def stop_monitor(self):
         global system_alert_flag, app_alert_flag
         system_alert_flag = False
         app_alert_flag = False

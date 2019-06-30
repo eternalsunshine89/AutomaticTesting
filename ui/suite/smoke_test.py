@@ -4,7 +4,7 @@ from Function.App01.TestCase.addApp import AddApp
 
 
 # 主功能测试用例装载
-class SmokeTest(object):
+class Smoke(object):
     # 按测试用例类创建测试用例集
     def create_test_suite(self):
         # 编辑测试套件列表(要执行的测试模块)

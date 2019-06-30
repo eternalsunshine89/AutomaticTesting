@@ -4,7 +4,7 @@ import time
 import winreg
 
 
-class ComputerInfo(object):
+class PCinfo(object):
 
     # 获取系统当前时间
     def get_time(self):

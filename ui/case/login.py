@@ -1,7 +1,6 @@
 # coding=utf-8
 import time
 import unittest
-
 from Function.App01.CommonLib.AppiumPackage import Appium
 from Function.App01.CommonLib.computerInfo import ComputerInfo
 from Function.App01.TestData.elements import Elements

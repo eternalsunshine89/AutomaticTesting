@@ -12,7 +12,7 @@ from selenium import webdriver
 
 
 class SendEmail(object):
-    def __init__(self, username, password, state='debug', file_path=None, html_path=None):
+    def __init__(self, username, password, state='debug', file_path='', html_path=''):
         self.username = username
         self.password = password
         self.state = state
@@ -29,7 +29,7 @@ class SendEmail(object):
         latest = os.path.join(get_path, lists[-1])
         return latest
 
-    def screen_shot(self):
+    def screenshot(self):
         # 使用selenium的webdriver协议通过chrome驱动打开网页进行截图
         try:
             driver = webdriver.Chrome()

@@ -1,12 +1,11 @@
 # coding=utf-8
 import unittest
 import time
-
 from AutoTest.FunctionTest.comFunction.appiumLib import Appium
 
 
 class AddTestcase(unittest.TestCase, Appium):
-    # 以下为用例编写方法和规范,如有不清楚的地方可询问作者(@eternalsunshine)
+    # 以下为用例编写方法和规范,如有不清楚的地方可询问作者(@laughing)
     # 请按照 test_template 测试用例模板的格式编写测试用例(本架构会自动识别所有以 test 开头的函数并添加为测试用例)
     # 断言设置标准为:完成一个操作后就顺便为该操作添加断言
     # 用户操作已封装在 func_script 目录下的 picture.py 内,可在测试用例内部使用self.method(paramater)
@@ -31,5 +30,3 @@ class AddTestcase(unittest.TestCase, Appium):
             self.screenshot("img_path")
         finally:
             self.assertIn('com.excelliance.dualaid:id/first_start_ok', self.page_source(), "点击立即体验后页面未跳转")
-
-        """test_template 是一条完整的测试用例,可作为编写用例的模板使用(如有好的意见或建议请联系作者进行沟通完善,谢谢!)"""
