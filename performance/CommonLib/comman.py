@@ -13,8 +13,8 @@ pkg_name = 'com.excelliance.dualaid'
 activity = 'com.excelliance.kxqp.ui.HelloActivity'
 # QQ_user = input('请输入测试用QQ号：')
 # QQ_key = input('请输入QQ密码：')
-QQ_user = "1037287177"
-QQ_key = "wangchangQQ227x"
+QQ_user = "******"
+QQ_key = "******"
 
 
 # 获取安卓手机的运行日志
